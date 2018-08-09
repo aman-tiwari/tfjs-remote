@@ -28,7 +28,7 @@ tf.io.registerLoadRouter(loadHandler);
 
 async function main() {
   const rtf = (await initRemote('http://localhost:3060'))(tf);
-  const t = performance.now();
+
   const ones = rtf.ones([5, 5]);
 
   const twos = rtf.add(ones, ones);
@@ -53,7 +53,6 @@ async function main() {
 
   console.log(
       await r.sum().data());  // should be 1 since model output is softmaxed
-  console.log(performance.now() - t);
 }
 
 main();
