@@ -47,7 +47,7 @@ async function main() {
   const modelInput = rtf.ones([1, 224, 224, 3]);
   const m = await rtf.loadModel(
       'https://storage.googleapis.com/tfjs-models/tfjs/mobilenet_v1_0.25_224/model.json');
-  const r = (m as any).predict(modelInput) as tf.Tensor;
+  const r = m.predict(modelInput) as tf.Tensor;
 
   await r.print();
 
