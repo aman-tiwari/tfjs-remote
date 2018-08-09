@@ -1,0 +1,25 @@
+{
+  "name": "tfjs-remote",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.9.7",
+    "ts-node": "^7.0.0",
+    "ts-node-dev": "^1.0.0-pre.26",
+    "typescript": "^3.1.0-dev.20180803"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "latest",
+    "@tensorflow/tfjs-core": "^0.12.4",
+    "@tensorflow/tfjs-node": "^0.1.7",
+    "@types/socket.io": "^1.4.36",
+    "@types/socket.io-client": "^1.4.32",
+    "@types/uuid": "^3.4.3",
+    "clang-format": "^1.2.3",
+    "node-fetch": "^2.2.0",
+    "socket.io": "^2.1.1",
+    "tfjs-shapes": "^0.0.10",
+    "uuid": "^3.3.2"
+  }
+}
