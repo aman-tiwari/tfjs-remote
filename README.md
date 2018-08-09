@@ -1,7 +1,7 @@
 ## Tensorflow.js Remote
 
 Use Tensorflow.js remotely (i.e, have all computations performed on a remote server).
-Presents a near-isomorphic interface as regular Tensorflow.js
+Presents a near-isomorphic interface as regular Tensorflow.js.
 
 ## Usage:
 Kitchen-sink example:
@@ -58,3 +58,12 @@ async function main() {
 main();
 
 ```
+
+This library supports two different ways of making Tensorflow.js work remotely. One is the remote backend, located in `src/backend`. Look at `src/backend/test.ts` to see how to use it. This is the "proper" and less magical method to wrap Tensorflow.js, and should work in environments that don't support `Proxies`.
+
+The other (default) wrapper, in `src`, instead uses a `Proxy` to wrap the `tf` object, which massively reduces communication overhead (from an arbitary number of backend calls to implement an op or model prediction to just 1). This wrapper is much, much faster, however more magical and probably fragile.
+
+## TODO:
+
+* Add tests.
+* Support training (should just work if one proxies the `fit` method as the `predict` method has been)
